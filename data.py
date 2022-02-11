@@ -10,10 +10,7 @@ class stationInfo():
         self.info = {
             "Max" : [],
             "Min" : [],
-            "Humidity" : [],
-            "WindMax" : [],
-            "WindMin" : [],
-            "Rain" : [],
+            
         }
         self.months = []
 
@@ -57,10 +54,7 @@ with open('2016VizData.csv', newline='') as csvfile:
     for row in reader:
         max = float(row["TMAX"])
         min = float(row["TMIN"])
-        humidity = float(row["HAVG"])
-        windMax = float(row["WSMX"])
-        windMin = float(row["WSMN"])
-        rain = float(row["RAIN"])
+        
 
         currentStation = row["STID"]
         i = 0
@@ -77,9 +71,15 @@ with open('2016VizData.csv', newline='') as csvfile:
             if station.name == currentStation:
                 station.addData("Max", max, (-80, 120))
                 station.addData("Min", min, (-80, 120))
-                station.addData("Humidity", humidity, (-80, 120))
-                station.addData("WindMax", windMax, (-80, 120))
-                station.addData("WindMin", windMin, (-80, 120))
-                station.addData("Rain", rain, (-80, 120))
-                station.months.append(row["MONTH"])
                 
+name = input('Hello, what is your name? ')
+print(f'hello {name}')
+while True:
+    for station in stations:
+        stationInfo()
+    
+                
+    plot.legend()
+    plot.show()
+
+    break
